@@ -56,8 +56,8 @@ public class GvtTest {
         Path gvtPath = Path.of(".gvt");
         try {
             Files.walk(gvtPath)
-                .sorted(Comparator.reverseOrder())
-                .forEach(GvtTest::safeDelete);
+                    .sorted(Comparator.reverseOrder())
+                    .forEach(GvtTest::safeDelete);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -348,10 +348,10 @@ public class GvtTest {
         Gvt gvt = new Gvt(eh);
         gvt.mainInternal("history", "-last", "2");
         verify(eh, times(1)).exit(0,
-    """
-             7: Again modified b.txt
-             6: File committed successfully. File: b.txt
-             """);
+                """
+                         7: Again modified b.txt
+                         6: File committed successfully. File: b.txt
+                         """);
     }
 
     @Test
@@ -360,16 +360,16 @@ public class GvtTest {
         Gvt gvt = new Gvt(eh);
         gvt.mainInternal("history");
         verify(eh, times(1)).exit(0,
-            """
-            7: Again modified b.txt
-            6: File committed successfully. File: b.txt
-            5: File added successfully. File: b.txt
-            4: File detached successfully. File: b.txt
-            3: Adding C FILE
-            2: File added successfully. File: b.txt
-            1: File added successfully. File: a.txt
-            0: GVT initialized.
-            """);
+                """
+                7: Again modified b.txt
+                6: File committed successfully. File: b.txt
+                5: File added successfully. File: b.txt
+                4: File detached successfully. File: b.txt
+                3: Adding C FILE
+                2: File added successfully. File: b.txt
+                1: File added successfully. File: a.txt
+                0: GVT initialized.
+                """);
     }
 
 
