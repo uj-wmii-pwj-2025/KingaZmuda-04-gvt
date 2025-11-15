@@ -55,7 +55,7 @@ public class CatalogManager {
     }
 
     /**
-     * Checks whether file is tracked in the current version
+     * Checks whether file was added to the current version
      *
      * @param fileName - name of said file
      * @return true if file is tracked, otherwise - false
